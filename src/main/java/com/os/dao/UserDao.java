@@ -15,6 +15,7 @@ import com.os.model.User;
 
 public class UserDao// implements DaoInter
 {
+	int genID;
 	JdbcTemplate jdbcTemplate;
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
@@ -24,7 +25,7 @@ public class UserDao// implements DaoInter
 	}
 	public int saveData(User u)	{
 		System.out.println("in save data..");
-		String query="insert into g11_users values('"+u.getUname()+"','"+u.getUemail()+"','"+u.getUmobile()+"','"+u.getUpassword()+"','"+u.getUconfirm_password()+"')";
+		String query="insert into g11_users values(g11_users_seq.nextval,'"+u.getGu_name()+"','"+u.getGu_email()+"','"+u.getGu_mobile()+"','"+u.getGu_password()+"','"+u.getGu_confirm_password()+"','"+u.getGu_usertype()+"')";
 		return jdbcTemplate.update(query);
 	}
 
@@ -32,8 +33,8 @@ public class UserDao// implements DaoInter
 		List<User> lst = getAllUsers();
 		boolean b = false;
 		for(User r: lst) {
-			if(r.getUemail().equalsIgnoreCase(l.getUemail())) {
-				if(r.getUpassword().equalsIgnoreCase(l.getUpassword())) {
+			if(r.getGu_email().equalsIgnoreCase(l.getGu_email())) {
+				if(r.getGu_confirm_password().equalsIgnoreCase(l.getGu_password())) {
 					b = true;
 					break;
 				}
@@ -43,20 +44,21 @@ public class UserDao// implements DaoInter
 	}
 
 	public List<User> getAllUsers(){  
-		 return jdbcTemplate.query("select * from g11_users",new ResultSetExtractor<List<User>>(){  
-		    public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {    
-		        List<User> list=new ArrayList<User>();  
-		        while(rs.next()){  
-		        User u=new User();   
-		        u.setUname(rs.getString(1));
-		        u.setUemail(rs.getString(2));
-		        u.setUmobile(rs.getString(3));
-		        u.setUpassword(rs.getString(4));
-		        u.setUconfirm_password(rs.getString(5));
-		        list.add(u);  
-		        }  
-		        return list;  
-		        }  
-		 });  
-	 }  
+		return jdbcTemplate.query("select * from g11_users",new ResultSetExtractor<List<User>>(){  
+			public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {    
+				List<User> list=new ArrayList<User>();  
+				while(rs.next()){  
+					User u=new User();
+					u.setPk_g11_users(rs.getLong(1));
+					u.setGu_name(rs.getString(2));
+					u.setGu_email(rs.getString(3));
+					u.setGu_mobile(rs.getString(4));
+					u.setGu_password(rs.getString(5));
+					u.setGu_confirm_password(rs.getString(6));
+					list.add(u);  
+				}  
+				return list;  
+			}  
+		});  
+	}  
 }
