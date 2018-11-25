@@ -46,8 +46,8 @@ public class UserController {
 			List<User> lst = new LinkedList<User>();
 			lst = udao.getAllUsers();
 			for(User r:lst) {
-				if(r.getUemail().equalsIgnoreCase(l.getUemail())) {
-//					session.setAttribute("cname",r.getUname()); CREATE SESSION HERE
+				if(r.getGu_email().equalsIgnoreCase(l.getGu_email())) {
+
 					return new ModelAndView("display");
 				}
 			}
