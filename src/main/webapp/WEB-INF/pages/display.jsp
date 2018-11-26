@@ -46,13 +46,14 @@
 				aria-expanded="false"> Products </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<c:forEach var="cat" items="${Category }" varStatus="status">
-						<a class="dropdown-item" href="getCategory/${cat.pk_g11_categories }"><c:out
+						<a class="dropdown-item"
+							href="getCategory/${cat.pk_g11_categories }"><c:out
 								value="${cat.gc_name }" /></a>
 					</c:forEach>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="getCategory/9">All Products</a>
 				</div></li>
-				<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
 		</ul>
 		<!-- <form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search"
@@ -80,9 +81,11 @@
 
 
 	<c:forEach var="prod" items="${Product }" varStatus="status">
+
 		<div class="col-sm-4">
 			<div class="card">
 				<div class="card-body">
+
 					<img class="" src="https://via.placeholder.com/150"
 						alt="Card image cap">
 					<h5 class="card-title">
@@ -96,6 +99,7 @@
 				</div>
 			</div>
 		</div>
+
 	</c:forEach>
 
 </body>

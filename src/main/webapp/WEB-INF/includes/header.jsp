@@ -44,13 +44,14 @@
 				aria-expanded="false"> Products </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<c:forEach var="cat" items="${Category }" varStatus="status">
-						<a class="dropdown-item" href="getCategory/${cat.pk_g11_categories }"><c:out
+						<a class="dropdown-item"
+							href="getCategory/${cat.pk_g11_categories }"><c:out
 								value="${cat.gc_name }" /></a>
 					</c:forEach>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="getLaptop">All Products</a>
 				</div></li>
-				<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
 		</ul>
 		<!-- <form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search"
