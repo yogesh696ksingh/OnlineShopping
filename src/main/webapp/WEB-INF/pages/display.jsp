@@ -50,7 +50,7 @@
 								value="${cat.gc_name }" /></a>
 					</c:forEach>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="getLaptop">All Products</a>
+					<a class="dropdown-item" href="getCategory/9">All Products</a>
 				</div></li>
 				<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
 		</ul>
