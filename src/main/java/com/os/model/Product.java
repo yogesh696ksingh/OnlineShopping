@@ -9,7 +9,7 @@ public class Product {
 	private String gp_name;
 	private String gp_image;
 	private long gp_stock;
-	private double price;
+	private double gp_price;
 	private String gp_description;
 	private Date gp_date;
 	public long getPk_g11_products() {
@@ -48,11 +48,12 @@ public class Product {
 	public void setGp_stock(long gp_stock) {
 		this.gp_stock = gp_stock;
 	}
-	public double getPrice() {
-		return price;
+	
+	public double getGp_price() {
+		return gp_price;
 	}
-	public void setPrice(double price) {
-		this.price = price;
+	public void setGp_price(double gp_price) {
+		this.gp_price = gp_price;
 	}
 	public String getGp_description() {
 		return gp_description;

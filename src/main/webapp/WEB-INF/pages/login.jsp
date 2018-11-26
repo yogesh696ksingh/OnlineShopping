@@ -32,13 +32,13 @@
 				<!-- Email -->
 				<div class="form-group">
 					<label for="inputEmail">Email</label> <input type="email"
-						class="form-control" id="inputEmail" name="uemail"
+						class="form-control" id="inputEmail" name="gu_email"
 						placeholder="Email">
 				</div>
 				<!-- Password -->
 				<div class="form-group">
 					<label for="inputPassword">Password</label> <input type="password"
-						class="form-control" id="inputPassword" name="upassword"
+						class="form-control" id="inputPassword" name="gu_password"
 						placeholder="Password">
 				</div>
 				<div class="col-sm-4 offset-sm-4" style="margin-top:20px">
