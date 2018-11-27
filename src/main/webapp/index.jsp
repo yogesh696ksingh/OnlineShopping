@@ -107,13 +107,15 @@
 				</div>
 
 				<div class="form-group">
-					<label for="gu_usertype">Example select</label> <select
-						class="form-control" id="gu_usertype" name="gu_usertype">
-						<option>Choose...</option>
-						<option value="customer">Customer</option>
-						<option value="retailer">Retailer</option>
-						<option value="admin">Admin</option>
-					</select>
+					<label for="gu_usertype" class="col-md-4 control-label">Select User</label>
+					<div class="col-md-4 inputGroupContainer">
+						<select class="form-control" id="gu_usertype" name="gu_usertype">
+							<option>Choose...</option>
+							<option value="customer">Customer</option>
+							<option value="retailer">Retailer</option>
+							<option value="admin">Admin</option>
+						</select>
+					</div>
 				</div>
 				<!-- Select Basic -->
 

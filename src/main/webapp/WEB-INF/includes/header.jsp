@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,7 +24,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="#">Navbar</a>
+		class="navbar-brand" href="#">Shopp-E</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -37,19 +37,20 @@
 			<li class="nav-item active"><a class="nav-link" href="#">Home
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> Products </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<!-- <a class="dropdown-item" href="#">Action</a>  -->
-					<a class="dropdown-item" href="#">Mobile Phones</a>
+					<c:forEach var="cat" items="${Category }" varStatus="status">
+						<a class="dropdown-item"
+							href="getCategory/${cat.pk_g11_categories }"><c:out
+								value="${cat.gc_name }" /></a>
+					</c:forEach>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Laptops</a>
+					<a class="dropdown-item" href="getLaptop">All Products</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
 		</ul>
 		<!-- <form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search"
@@ -58,7 +59,7 @@
 		</form> -->
 
 		<ul class="nav justify-content-end">
-			
+
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -69,7 +70,7 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Account Settings</a>
 				</div></li>
-				<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
+			<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
 			</li>
 		</ul>
 	</div>

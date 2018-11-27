@@ -32,13 +32,21 @@
 				<!-- Email -->
 				<div class="form-group">
 					<label for="inputEmail">Email</label> <input type="email"
+<<<<<<< HEAD
 						class="form-control" id="inputEmail" name="uemail"
+=======
+						class="form-control" id="inputEmail" name="gu_email"
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 						placeholder="Email">
 				</div>
 				<!-- Password -->
 				<div class="form-group">
 					<label for="inputPassword">Password</label> <input type="password"
+<<<<<<< HEAD
 						class="form-control" id="inputPassword" name="upassword"
+=======
+						class="form-control" id="inputPassword" name="gu_password"
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 						placeholder="Password">
 				</div>
 				<div class="col-sm-4 offset-sm-4" style="margin-top:20px">

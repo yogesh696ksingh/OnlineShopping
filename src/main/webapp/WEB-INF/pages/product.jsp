@@ -1,23 +1,11 @@
-<<<<<<< HEAD
+<%-- <%@ include file="/WEB-INF/includes/header.jsp"%> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-=======
-
-<%-- <%@ include file = "/WEB-INF/includes/header.jsp" %> --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
->>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<<<<<<< HEAD
-<title>Insert title here</title>
-</head>
-<body>
-	<h2>Display page</h2>
-=======
 <title></title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -38,7 +26,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="#">Navbar</a>
+		class="navbar-brand" href="#">Shopp-E</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -51,22 +39,20 @@
 			<li class="nav-item active"><a class="nav-link" href="#">Home
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> Products </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<c:forEach var="cat" items="Category">
-					<a class="dropdown-item" href="getMobile"><c:out value="${cat}"/></a>
-				</c:forEach>
-					
-					<a class="dropdown-item" href="getLaptop">Laptop</a>
+					<c:forEach var="cat" items="${Category }" varStatus="status">
+						<a class="dropdown-item"
+							href="getCategory/${cat.pk_g11_categories }"><c:out
+								value="${cat.gc_name }" /></a>
+					</c:forEach>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="getLaptop">All Products</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
 		</ul>
 		<!-- <form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search"
@@ -75,7 +61,7 @@
 		</form> -->
 
 		<ul class="nav justify-content-end">
-			
+
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -86,11 +72,32 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Account Settings</a>
 				</div></li>
-				<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
+			<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
 			</li>
 		</ul>
 	</div>
 	</nav>
->>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
+
+	<div class="col-sm-12">
+		<c:forEach var="cprod" items="${Category_Product }" varStatus="status">
+
+			<div class="card col-sm-3">
+				<img class="card-img-top" src="https://via.placeholder.com/150"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">
+						<c:out value="${cprod.gp_name }" />
+					</h5>
+					<p class="card-text">
+						<c:out value="${cprod.gp_description }" />
+					</p>
+				</div>
+				<div class="card-footer">
+					<small class="text-muted"><button class="btn btn-default">Add
+							to Cart</button></small>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
 </body>
 </html>

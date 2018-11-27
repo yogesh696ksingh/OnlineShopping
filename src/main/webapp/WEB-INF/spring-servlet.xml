@@ -32,5 +32,9 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
+	<bean id="hdao" class="com.os.dao.HomeDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate">
+		</property>
+	</bean>
 
 </beans>

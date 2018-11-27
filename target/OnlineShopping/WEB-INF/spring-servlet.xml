@@ -6,7 +6,11 @@
    http://www.springframework.org/schema/context 
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+<<<<<<< HEAD
 	<context:component-scan base-package="com.os.controller" />
+=======
+	<context:component-scan base-package="com.os" />
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -19,7 +23,11 @@
 		<property name="driverClassName"
 			value="oracle.jdbc.OracleDriver" />
 		<property name="url"
+<<<<<<< HEAD
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
+=======
+			value="jdbc:oracle:thin:@infva05858:1521:xe" />
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 		<property name="username" value="system" />
 		<property name="password" value="Newuser123" />
 	</bean>
@@ -33,5 +41,12 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
+<<<<<<< HEAD
+=======
+	<bean id="hdao" class="com.os.dao.HomeDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate">
+		</property>
+	</bean>
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 
 </beans>

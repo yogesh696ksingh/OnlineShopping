@@ -45,7 +45,11 @@
 					<div class="col-sm-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
+<<<<<<< HEAD
 								class="glyphicon glyphicon-user"></i></span> <input name="uname"
+=======
+								class="glyphicon glyphicon-user"></i></span> <input name="gu_name"
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 								placeholder="Name" class="form-control" type="text">
 						</div>
 					</div>
@@ -57,7 +61,11 @@
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
+<<<<<<< HEAD
 								class="glyphicon glyphicon-envelope"></i></span> <input name="uemail"
+=======
+								class="glyphicon glyphicon-envelope"></i></span> <input name="gu_email"
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 								placeholder="E-mail Address" class="form-control" type="text">
 						</div>
 					</div>
@@ -72,8 +80,14 @@
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
+<<<<<<< HEAD
 								class="glyphicon glyphicon-earphone"></i></span> <input name="umobile"
 								placeholder="Mobile" class="form-control" type="text">
+=======
+								class="glyphicon glyphicon-earphone"></i></span> <input
+								name="gu_mobile" placeholder="Mobile" class="form-control"
+								type="text">
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 						</div>
 					</div>
 				</div>
@@ -85,7 +99,11 @@
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
+<<<<<<< HEAD
 								class="glyphicon glyphicon-user"></i></span> <input name="upassword"
+=======
+								class="glyphicon glyphicon-user"></i></span> <input name="gu_password"
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 								placeholder="Password" class="form-control" type="password">
 						</div>
 					</div>
@@ -99,13 +117,29 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input
+<<<<<<< HEAD
 								name="uconfirm_password" placeholder="Confirm Password"
+=======
+								name="gu_confirm_password" placeholder="Confirm Password"
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 								class="form-control" type="password">
 						</div>
 					</div>
 				</div>
 
+<<<<<<< HEAD
 
+=======
+				<div class="form-group">
+					<label for="gu_usertype">Example select</label> <select
+						class="form-control" id="gu_usertype" name="gu_usertype">
+						<option>Choose...</option>
+						<option value="customer">Customer</option>
+						<option value="retailer">Retailer</option>
+						<option value="admin">Admin</option>
+					</select>
+				</div>
+>>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 				<!-- Select Basic -->
 
 				<!-- <!-- Success message 

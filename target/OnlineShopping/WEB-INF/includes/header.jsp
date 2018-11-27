@@ -1,23 +1,10 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-=======
-
-<%-- <%@ include file = "/WEB-INF/includes/header.jsp" %> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
->>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<<<<<<< HEAD
-<title>Insert title here</title>
-</head>
-<body>
-	<h2>Display page</h2>
-=======
 <title></title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -57,8 +44,8 @@
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> Products </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<c:forEach var="cat" items="Category">
-					<a class="dropdown-item" href="getMobile"><c:out value="${cat}"/></a>
+				<c:forEach var="productList" items=${Category}>
+					<a class="dropdown-item" href="getMobile"><c:out value="${c.gc_name}"/></a>
 				</c:forEach>
 					
 					<a class="dropdown-item" href="getLaptop">Laptop</a>
@@ -91,6 +78,3 @@
 		</ul>
 	</div>
 	</nav>
->>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
-</body>
-</html>
