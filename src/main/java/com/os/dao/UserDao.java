@@ -43,6 +43,7 @@ public class UserDao// implements DaoInter
 		return b;
 	}
 
+	
 	public List<User> getAllUsers(){  
 		return jdbcTemplate.query("select * from g11_users",new ResultSetExtractor<List<User>>(){  
 			public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {    

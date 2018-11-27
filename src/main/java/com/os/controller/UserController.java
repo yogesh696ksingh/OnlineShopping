@@ -47,7 +47,6 @@ public class UserController {
 			lst = udao.getAllUsers();
 			for(User r:lst) {
 				if(r.getGu_email().equalsIgnoreCase(l.getGu_email())) {
-
 					return new ModelAndView("display");
 				}
 			}
