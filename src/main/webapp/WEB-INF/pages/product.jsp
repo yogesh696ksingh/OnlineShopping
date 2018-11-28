@@ -64,7 +64,7 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<c:forEach var="cat" items="${Category }" varStatus="status">
 						<a class="dropdown-item"
-							href="getCategory/${cat.pk_g11_categories }"><c:out
+							href="/${cat.pk_g11_categories }"><c:out
 								value="${cat.gc_name }" /></a>
 					</c:forEach>
 					<div class="dropdown-divider"></div>

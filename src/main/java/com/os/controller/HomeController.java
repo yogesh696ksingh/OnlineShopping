@@ -27,7 +27,7 @@ import com.os.model.User;
 public class HomeController {
 	@Autowired
 	HomeDao hdao;
-	@RequestMapping(value = "/getCategory/{id}", method=RequestMethod.GET)
+	@RequestMapping(value = "getCategory/{id}", method=RequestMethod.GET)
 	public ModelAndView getCategory(@PathVariable int id) {
 		ModelAndView map = new ModelAndView("product");
 		List<Category> clist = new LinkedList<Category>();
