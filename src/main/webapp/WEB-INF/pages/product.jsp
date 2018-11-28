@@ -11,6 +11,9 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
+<link href="resources/css/custom.css" rel="stylesheet" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -23,6 +26,25 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	crossorigin="anonymous"></script>
+<script type="text/javascript">
+	/* 		$(document).ready(function() {
+	 resize_to_fit();
+	 });
+
+	 function resize_to_fit() {
+	 var fontsize = $('.dyanamic_font').css('font-size');
+	 $('.dyanamic_font').css('fontSize', parseFloat(fontsize));
+
+	 if ($('.dyanamic_font').height() >= $('.dyanamic_font div').height()) {
+	 resize_to_fit();
+	 }
+	 } */
+</script>
+<style>
+.product_card {
+	margin: 2vw;
+}
+</style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
@@ -61,7 +83,6 @@
 		</form> -->
 
 		<ul class="nav justify-content-end">
-
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -78,26 +99,29 @@
 	</div>
 	</nav>
 
-	<div class="col-sm-12">
-		<c:forEach var="cprod" items="${Category_Product }" varStatus="status">
-
-			<div class="card col-sm-3">
-				<img class="card-img-top" src="https://via.placeholder.com/150"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">
-						<c:out value="${cprod.gp_name }" />
-					</h5>
-					<p class="card-text">
-						<c:out value="${cprod.gp_description }" />
-					</p>
+	<div class="container">
+		<div class="row">
+			<c:forEach var="cprod" items="${Category_Product }"
+				varStatus="status">
+				<div class="card col-sm-3 product_card">
+					<img class="card-img-top" src="https://via.placeholder.com/150"
+						alt="Card image cap" style="margin-top:15px">
+					<div class="card-body">
+						<h5 class="card-title">
+							<c:out value="${cprod.gp_name }" />
+						</h5>
+						<p class="card-text">
+							Price:&nbsp; &#8377;
+							<c:out value="${cprod.gp_price }" />
+						</p>
+					</div>
+					<div class="card-body">
+						<a href="#" class="card-link">Cart</a> <a href="#"
+							class="card-link">Compare</a>
+					</div>
 				</div>
-				<div class="card-footer">
-					<small class="text-muted"><button class="btn btn-default">Add
-							to Cart</button></small>
-				</div>
-			</div>
-		</c:forEach>
+			</c:forEach>
+		</div>
 	</div>
 </body>
 </html>
