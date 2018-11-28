@@ -26,6 +26,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+
 	<div class="row" style="margin-top: 10%;">
 		<div class="container col-sm-4 offset-sm-4">
 			<form action="userLogin" method="post">
@@ -41,13 +42,13 @@
 						class="form-control" id="inputPassword" name="gu_password"
 						placeholder="Password">
 				</div>
-				<div class="col-sm-4 offset-sm-4" style="margin-top:20px">
+				<div class="col-sm-4 offset-sm-4" style="margin-top: 20px">
 					<button type="submit" class="btn btn-primary btn-block"
 						value="login">Login</button>
-
 				</div>
 			</form>
 		</div>
 	</div>
+
 </body>
 </html>

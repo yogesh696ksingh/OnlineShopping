@@ -23,6 +23,7 @@ public class HomeDao {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+	/*list to get categories*/
 	public List<Category> getAllCategory(){  
 		return jdbcTemplate.query("select * from g11_categories",new ResultSetExtractor<List<Category>>(){  
 			public List<Category> extractData(ResultSet rs) throws SQLException, DataAccessException {    

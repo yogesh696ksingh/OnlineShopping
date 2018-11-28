@@ -1,6 +1,7 @@
 <%-- <%@ include file = "/WEB-INF/includes/header.jsp" %> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ page errorPage="error.jsp" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -25,6 +26,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="#">Shopp-E</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -65,12 +67,12 @@
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Yogesh </a>
+				aria-expanded="false"> <%=session.getAttribute("user_name") %> </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="#">My Orders</a> <a
 						class="dropdown-item" href="#">My Profile</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Account Settings</a>
+					<a class="dropdown-item" href="redirectLogout">Logout</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
 			</li>

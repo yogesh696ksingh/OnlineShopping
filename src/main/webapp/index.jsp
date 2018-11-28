@@ -23,12 +23,64 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	function Validate() 
+	{
+		var mobile = document.contact_form.gu_mobile.value;
+		var password = document.contact_form.gu_password.value;
+		var confirmPassword = document.contact_form.gu_confirm_password.value;
+
+		if (mobile.length < 10 || mobile.length > 10) {
+		    alert("Mobile number is not valid! Please Enter 10 Digit Mobile No.");
+		    return false;
+		}
+		if (password != confirmPassword) {
+			alert("Passwords don't match! Try again.");
+			return false;
+		}
+		return true;
+	}
+	
+		/* var name = document.getElementById("gu_name").value;
+		var email = document.getElementById("gu_email").value;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var mobile = document.getElementById("gu_mobile").value;
+		var mob = /^[1-9]{1}[0-9]{9}$/;
+  		var atposition=email.indexOf("@");  
+		var dotposition=email.lastIndexOf(".");  
+		if (name==null || name==""){  
+			  alert("Name can't be blank");  
+			  return false;  
+			}
+		else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+		  alert("Please enter a valid e-mail address ");  
+		  return false;  
+		  }  
+		else if (mobile == "" || mobile == null) {
+		    alert("Please enter your Mobile No.");
+		    return false;
+		  }
+		else if (mobile.length < 10 || mobile.length > 10) {
+		    alert("Mobile No. is not valid, Please Enter 10 Digit Mobile No.");
+		    return false;
+		  }		
+		else if (mob.test(mobile) == false) {
+		    alert("Please enter valid mobile number.");
+		    return false;
+		}
+		else if(password.length<8){  
+		  alert("Password must be at least 8 characters long.");  
+			  return false;  
+				  }   */
+		
+</script>
+
 </head>
 <body>
-
 	<div class="container">
 		<form class="well form-horizontal" action="saveUser" method="post"
-			id="contact_form">
+			name="contact_form" id="contact_form" onsubmit="return Validate()">
 			<fieldset>
 				<!-- Form Name -->
 				<legend>
@@ -39,33 +91,36 @@
 					</center>
 				</legend>
 				<br>
-				<!-- Text input-->
+				<!-- Name-->
+				
 				<div class="form-group">
-					<label class="col-sm-4 control-label">Name</label>
-					<div class="col-sm-4 inputGroupContainer">
+					<label class="col-md-4 control-label">Name</label>
+					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
-							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-user"></i></span> <input name="gu_name"
-								placeholder="Name" class="form-control" type="text">
+							<span class="input-group-addon"><i class="fas fa-user"></i>
+							</span> <input name="gu_name"
+								placeholder="Name" class="form-control" type="text" required>
 						</div>
 					</div>
 				</div>
 
-				<!-- Text input-->
+				<!-- Email -->
 				<div class="form-group">
 					<label class="col-md-4 control-label">E-mail</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-envelope"></i></span> <input name="gu_email"
-								placeholder="E-mail Address" class="form-control" type="text">
+								placeholder="E-mail Address" class="form-control"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+								title="Must contain @ . " type="text" required>
 						</div>
 					</div>
 				</div>
 
 
 
-				<!-- Text input-->
+				<!-- Contact -->
 
 				<div class="form-group">
 					<label class="col-md-4 control-label">Contact No.</label>
@@ -74,12 +129,14 @@
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-earphone"></i></span> <input
 								name="gu_mobile" placeholder="Mobile" class="form-control"
-								type="text">
+								pattern="[6789][0-9]{9}"
+								title="Must start with 6,7,8 or 9 and Must be 10 digit number"
+								type="tel" minlength="10" maxlength="10" required>
 						</div>
 					</div>
 				</div>
 
-				<!-- Text input-->
+				<!-- Password -->
 
 				<div class="form-group">
 					<label class="col-md-4 control-label">Password</label>
@@ -87,12 +144,15 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input name="gu_password"
-								placeholder="Password" class="form-control" type="password">
+								placeholder="Password" class="form-control"
+								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+								title="Must contain at least one uppercase letter, one digit, one special character and lowercase letter and must be of 8 or more characters"
+								type="password" required>
 						</div>
 					</div>
 				</div>
 
-				<!-- Text input-->
+				<!-- Confirm Password -->
 
 				<div class="form-group">
 					<label class="col-md-4 control-label">Confirm Password</label>
@@ -101,13 +161,14 @@
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input
 								name="gu_confirm_password" placeholder="Confirm Password"
-								class="form-control" type="password">
+								class="form-control" type="password" required>
 						</div>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="gu_usertype" class="col-md-4 control-label">Select User</label>
+					<label for="gu_usertype" class="col-md-4 control-label">Select
+						User</label>
 					<div class="col-md-4 inputGroupContainer">
 						<select class="form-control" id="gu_usertype" name="gu_usertype">
 							<option>Choose...</option>
@@ -129,10 +190,12 @@
 					<label class="col-md-4 control-label"></label>
 					<div class="col-md-4">
 						<br>
-						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+						<!-- 		<p class="submit">
+				<input type="submit" name="commit" value="Register">
+			</p> -->
 						<button type="submit" class="btn btn-primary">
-							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp SUBMIT <span
-								class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+							SUBMIT <span class="glyphicon glyphicon-send"></span>
 						</button>
 					</div>
 				</div>

@@ -35,10 +35,8 @@ public class UserController {
 	public ModelAndView helloWorld(HttpServletRequest request, HttpServletResponse response, @ModelAttribute User u) {
 
 		System.out.println("object");
-
 		int i=udao.saveData(u);
 		System.out.println("database!");
-
 		if(i>0) {
 			System.out.println("success!");
 		}
@@ -56,7 +54,11 @@ public class UserController {
 			lst = udao.getAllUsers();
 			for(User r:lst) {
 				if(r.getGu_email().equalsIgnoreCase(l.getGu_email())) {
-
+					//CREATES SESSION FOR USERNAME
+					HttpSession session = request.getSession();
+					session.setAttribute("user_id",l.getPk_g11_users());
+					session.setAttribute("user_name",r.getGu_name());
+					
 					List<Category> clist = new LinkedList<Category>();
 					List<Product> plist = new LinkedList<Product>();
 					clist = hdao.getAllCategory();
@@ -76,5 +78,16 @@ public class UserController {
 	public ModelAndView returnLogin() {
 		return new ModelAndView("login");
 	}
+	
+	@RequestMapping("/redirectLogout")
+	public ModelAndView returnLogout(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session=request.getSession();
+		session.removeAttribute("user_name");
+		session.removeAttribute("user_id");
+		session.invalidate();
+		
+		return new ModelAndView("logout");
+	}
+	
 
 }
