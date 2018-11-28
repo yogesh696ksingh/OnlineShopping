@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+	<%@ page errorPage="error.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,7 +42,7 @@
 				<div class="form-group">
 					<label for="inputPassword">Password</label> <input type="password"
 						class="form-control" id="inputPassword" name="gu_password"
-						placeholder="Password">
+						placeholder="Password" required>
 				</div>
 				<div class="col-sm-4 offset-sm-4" style="margin-top: 20px">
 					<button type="submit" class="btn btn-primary btn-block"

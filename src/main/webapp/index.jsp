@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ page errorPage="error.jsp" %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -84,6 +85,7 @@ pageEncoding="ISO-8859-1"%>
 		<div class="col-sm-8 offset-sm-2" style="margin-top: 5%;">
 			<form action="saveUser" method="post"
 			name="contact_form" id="contact_form" onsubmit="return Validate()">
+
 			<div class="form-row">
 				<!-- Name-->	
 				<div class="form-group col-md-6">
@@ -141,10 +143,12 @@ pageEncoding="ISO-8859-1"%>
 					name="gu_confirm_password" placeholder="Confirm Password"
 					class="form-control" type="password" required>
 				</div>
+
 			</div>
 			<div class="form-group">
 				<div class="form-check" style="padding-left: 0 !important">
 					<p>Already a user?&nbsp;<a href="redirectLogin">Login</a></p>
+
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary" style="background-color: #23476d !important;">
