@@ -84,6 +84,18 @@ public class UserController {
 		return new ModelAndView("login");
 	}
 	
+	@RequestMapping("/redirectDisplay")
+	public ModelAndView redirectDisplay() {
+		List<Category> clist = new LinkedList<Category>();
+		List<Product> plist = new LinkedList<Product>();
+		clist = hdao.getAllCategory();
+		plist = hdao.getLatestProducts();
+		ModelAndView map = new ModelAndView("display");
+		map.addObject("Category",clist);
+		map.addObject("Product", plist);
+		return map;
+	}
+	
 	@RequestMapping("/redirectLogout")
 	public ModelAndView returnLogout(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session=request.getSession();
