@@ -30,6 +30,11 @@ public class UserController {
 	
 	@Autowired
 	HomeDao hdao;
+	
+	@RequestMapping("/redirectTest")
+	public ModelAndView redirectTest() {
+		return new ModelAndView("test");
+	}
 
 	@RequestMapping("/saveUser")
 	public ModelAndView helloWorld(HttpServletRequest request, HttpServletResponse response, @ModelAttribute User u) {

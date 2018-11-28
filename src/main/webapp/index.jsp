@@ -7,6 +7,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OnlineShopping</title>
+<link href="resources/css/custom.css" rel="stylesheet" />
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -154,7 +155,7 @@
 
 				<!-- Confirm Password -->
 
-				<div class="form-group">
+				<div class="form-group product_card">
 					<label class="col-md-4 control-label">Confirm Password</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
@@ -206,6 +207,9 @@
 	<div>
 		<p>
 			Already a user?&nbsp;<a href="redirectLogin">Click Here</a>
+		</p>
+		<p>
+			Reroute to test<a href="redirectTest">Test</a>
 		</p>
 	</div>
 
