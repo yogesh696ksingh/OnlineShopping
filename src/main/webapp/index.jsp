@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page errorPage="error.jsp" %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -93,14 +94,14 @@
 				</legend>
 				<br>
 				<!-- Name-->
-				
+
 				<div class="form-group">
 					<label class="col-md-4 control-label">Name</label>
 					<div class="col-md-4 inputGroupContainer">
-						<div class="input-group">
+						<div clss="input-group">
 							<span class="input-group-addon"><i class="fas fa-user"></i>
-							</span> <input name="gu_name"
-								placeholder="Name" class="form-control" type="text" required>
+							</span> <input name="gu_name" placeholder="Name" class="form-control"
+								type="text" required>
 						</div>
 					</div>
 				</div>
@@ -192,9 +193,6 @@
 					<div class="col-md-4">
 						<br>
 
-						<!-- 		<p class="submit">
-				<input type="submit" name="commit" value="Register">
-			</p> -->
 						<button type="submit" class="btn btn-primary">
 							SUBMIT <span class="glyphicon glyphicon-send"></span>
 						</button>
@@ -208,9 +206,7 @@
 		<p>
 			Already a user?&nbsp;<a href="redirectLogin">Click Here</a>
 		</p>
-		<p>
-			Reroute to test<a href="redirectTest">Test</a>
-		</p>
+
 	</div>
 
 </body>
