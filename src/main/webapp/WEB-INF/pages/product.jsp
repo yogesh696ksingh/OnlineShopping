@@ -12,7 +12,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/custom.css"/>">
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/custom.css"/>"/>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -60,15 +60,15 @@
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="index.jsp" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Products </a>
+				aria-expanded="false">Products</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<c:forEach var="cat" items="${Category }" varStatus="status">
 						<a class="dropdown-item"
-							href="/${cat.pk_g11_categories }"><c:out
+							href="getCategory/${cat.pk_g11_categories }"><c:out
 								value="${cat.gc_name }" /></a>
 					</c:forEach>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="getLaptop">All Products</a>
+					<a class="dropdown-item" href="getCategory/9">All Products</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
 		</ul>

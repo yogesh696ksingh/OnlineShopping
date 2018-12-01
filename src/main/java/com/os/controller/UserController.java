@@ -31,26 +31,15 @@ public class UserController {
 	@Autowired
 	HomeDao hdao;
 	
-	@RequestMapping("/redirectTest")
-	public ModelAndView redirectTest() {
-		return new ModelAndView("test");
-	}
-
+	//Save user data to DB
 	@RequestMapping("/saveUser")
 	public ModelAndView helloWorld(HttpServletRequest request, HttpServletResponse response, @ModelAttribute User u) {
 
-		System.out.println("object");
-		int i=udao.saveData(u);
-		System.out.println("database!");
-		if(i>0) {
-			System.out.println("success!");
-		}
-		else
-			System.out.println("epic fail!");
-
+		int i=udao.saveData(u);		
 		return new ModelAndView("login");
 	}
 
+	//Validate Login and Create Session
 	@RequestMapping("/userLogin")
 	public ModelAndView userLogin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute Login l, Model model) {
 		boolean log = udao.validateUser(l);
@@ -61,9 +50,8 @@ public class UserController {
 				if(r.getGu_email().equalsIgnoreCase(l.getGu_email())) {
 					//CREATES SESSION FOR USERNAME
 					HttpSession session = request.getSession();
-					session.setAttribute("user_id",l.getPk_g11_users());
+					session.setAttribute("user_id",r.getPk_g11_users());
 					session.setAttribute("user_name",r.getGu_name());
-					
 					List<Category> clist = new LinkedList<Category>();
 					List<Product> plist = new LinkedList<Product>();
 					clist = hdao.getAllCategory();
@@ -71,7 +59,7 @@ public class UserController {
 					ModelAndView map = new ModelAndView("display");
 					map.addObject("Category",clist);
 					map.addObject("Product", plist);
-					return map;
+					return (map);
 
 				}
 			}
@@ -83,7 +71,7 @@ public class UserController {
 	public ModelAndView returnLogin() {
 		return new ModelAndView("login");
 	}
-	
+	//Display product using get and session
 	@RequestMapping("/redirectDisplay")
 	public ModelAndView redirectDisplay() {
 		List<Category> clist = new LinkedList<Category>();
@@ -95,7 +83,7 @@ public class UserController {
 		map.addObject("Product", plist);
 		return map;
 	}
-	
+	//Logout
 	@RequestMapping("/redirectLogout")
 	public ModelAndView returnLogout(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session=request.getSession();
@@ -106,5 +94,4 @@ public class UserController {
 		return new ModelAndView("logout");
 	}
 	
-
 }

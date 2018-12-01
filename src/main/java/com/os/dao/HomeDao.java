@@ -107,4 +107,26 @@ public class HomeDao {
 		}
 		 
 	}
+	public List<Product> getProductData(int id){  
+		String q = "select * from g11_products where pk_g11_products = ?";
+		return jdbcTemplate.query(q, new Object[] {id}, new ResultSetExtractor<List<Product>>(){  
+			public List<Product> extractData(ResultSet rs) throws SQLException, DataAccessException {    
+				List<Product> list=new ArrayList<Product>();  
+				while(rs.next()){  
+					Product p=new Product();
+					p.setPk_g11_products(rs.getLong(1));
+					p.setGp_cid(rs.getLong(2));
+					p.setGp_scid(rs.getLong(3));
+					p.setGp_name(rs.getString(4));
+					p.setGp_image(rs.getString(5));
+					p.setGp_stock(rs.getLong(6));
+					p.setGp_price(rs.getDouble(7));
+					p.setGp_description(rs.getString(8));
+					p.setGp_date(rs.getDate(9));
+					list.add(p);  
+				}  
+				return list;  
+			}  
+		});  
+	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+	<%@ page errorPage="error.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +8,6 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OnlineShopping</title>
-<link rel="icon" type="text/image" href="../uploads/images/prjtlogo.png">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -26,36 +26,29 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+
 	<div class="row" style="margin-top: 10%;">
 		<div class="container col-sm-4 offset-sm-4">
 			<form action="userLogin" method="post">
 				<!-- Email -->
 				<div class="form-group">
 					<label for="inputEmail">Email</label> <input type="email"
-<<<<<<< HEAD
-						class="form-control" id="inputEmail" name="uemail"
-=======
 						class="form-control" id="inputEmail" name="gu_email"
->>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
 						placeholder="Email">
 				</div>
 				<!-- Password -->
 				<div class="form-group">
 					<label for="inputPassword">Password</label> <input type="password"
-<<<<<<< HEAD
-						class="form-control" id="inputPassword" name="upassword"
-=======
 						class="form-control" id="inputPassword" name="gu_password"
->>>>>>> 0a505aaa591b7d77ab18a42ff9e00868456e66ed
-						placeholder="Password">
+						placeholder="Password" required>
 				</div>
-				<div class="col-sm-4 offset-sm-4" style="margin-top:20px">
+				<div class="col-sm-4 offset-sm-4" style="margin-top: 20px">
 					<button type="submit" class="btn btn-primary btn-block"
 						value="login">Login</button>
-
 				</div>
 			</form>
 		</div>
 	</div>
+
 </body>
 </html>

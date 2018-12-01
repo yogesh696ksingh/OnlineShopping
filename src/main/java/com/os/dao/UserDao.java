@@ -24,7 +24,6 @@ public class UserDao// implements DaoInter
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	public int saveData(User u)	{
-		System.out.println("in save data..");
 		String query="insert into g11_users values(g11_users_seq.nextval,'"+u.getGu_name()+"','"+u.getGu_email()+"','"+u.getGu_mobile()+"','"+u.getGu_password()+"','"+u.getGu_confirm_password()+"','"+u.getGu_usertype()+"')";
 		return jdbcTemplate.update(query);
 	}

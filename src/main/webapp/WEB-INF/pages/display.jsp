@@ -14,7 +14,7 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/custom.css"/>">
+	href="<c:url value="/resources/css/custom.css"/>"/>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -94,7 +94,7 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="redirectLogout">Logout</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
+			<li class="nav-item"><a class="nav-link active" href="myCart">Cart</a>
 			</li>
 		</ul>
 	</div>
@@ -116,7 +116,7 @@
 							</p>
 							<hr>
 							<div class="card-body">
-								<a href="#" class="card-link">Cart</a> <a href="#"
+								<a href="addCartData/${prod.pk_g11_products }" class="card-link">Cart</a> <a href="#"
 									class="card-link">Compare</a>
 							</div>
 						</div>

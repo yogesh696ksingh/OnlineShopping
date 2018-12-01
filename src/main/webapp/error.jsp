@@ -9,10 +9,6 @@
 
 <body>
 	<h1>Error!!!</h1>
-
-
-
-
 	<div>
 		<b>Error:</b> ${pageContext.exception}<br> <b>URI:</b>
 		${pageContext.errorData.requestURI} <br> <b>Status code:</b>${pageContext.errorData.statusCode}<br>

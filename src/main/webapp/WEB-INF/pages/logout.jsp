@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/custom.css"/>">
+	href="<c:url value="/resources/css/custom.css"/>"/>
 <title>Insert title here</title>
 </head>
-<!-- disabling back button -->
+  <!-- disabling back button -->
 <script type="text/javascript">
 	history.pushState(null, null, location.href);
 	window.onpopstate = function() {

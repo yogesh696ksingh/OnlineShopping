@@ -67,4 +67,10 @@ public class Product {
 	public void setGp_date(Date gp_date) {
 		this.gp_date = gp_date;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "id:'"+getPk_g11_products()+"'name:'"+getGp_name()+"'price:'"+getGp_price()+"'";
+	}
+	
 }

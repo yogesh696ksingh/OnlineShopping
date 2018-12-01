@@ -36,6 +36,10 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
+		<bean id="cdao" class="com.os.dao.CartDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate">
+		</property>
+	</bean>
 	<mvc:resources mapping="/resources/**" location="/resources/"
 		cache-period="31556926" />
 

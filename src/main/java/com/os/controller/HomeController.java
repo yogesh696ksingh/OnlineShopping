@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -24,10 +26,11 @@ import com.os.model.Category;
 import com.os.model.Product;
 import com.os.model.User;
 @Controller
+
 public class HomeController {
 	@Autowired
 	HomeDao hdao;
-	@RequestMapping(value = "getCategory/{id}", method=RequestMethod.GET)
+	@RequestMapping(value = "/getCategory/{id}", method=RequestMethod.GET)
 	public ModelAndView getCategory(@PathVariable int id) {
 		ModelAndView map = new ModelAndView("product");
 		List<Category> clist = new LinkedList<Category>();
