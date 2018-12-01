@@ -37,7 +37,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="redirectDisplay">Shopp-E</a>
+		class="navbar-brand" href="../redirectDisplay">Shopp-E</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -48,7 +48,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="redirectDisplay">Home <span class="sr-only">(current)</span>
+				href="../redirectDisplay">Home <span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -57,11 +57,11 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<c:forEach var="cat" items="${Category }" varStatus="status">
 						<a class="dropdown-item"
-							href="getCategory/${cat.pk_g11_categories }"><c:out
+							href="../getCategory/${cat.pk_g11_categories }"><c:out
 								value="${cat.gc_name }" /></a>
 					</c:forEach>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="getCategory/9">All Products</a>
+					<a class="dropdown-item" href="../getCategory/9">All Products</a>
 				</div></li>
 		</ul>
 		<!-- <form class="form-inline my-2 my-lg-0">
@@ -81,9 +81,9 @@
 					<a class="dropdown-item" href="#">My Orders</a> <a
 						class="dropdown-item" href="#">My Profile</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="redirectLogout">Logout</a>
+					<a class="dropdown-item" href="../redirectLogout">Logout</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
+			<li class="nav-item"><a class="nav-link active" href=".../myCart/9">Cart</a>
 			</li>
 		</ul>
 	</div>

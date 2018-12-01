@@ -94,7 +94,7 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="redirectLogout">Logout</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link active" href="myCart">Cart</a>
+			<li class="nav-item"><a class="nav-link active" href="myCart/9">Cart</a>
 			</li>
 		</ul>
 	</div>

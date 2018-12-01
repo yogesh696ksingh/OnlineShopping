@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.os.dao.CartDao;
+import com.os.dao.HomeDao;
 import com.os.dao.UserDao;
 import com.os.model.CartProducts;
+import com.os.model.Category;
 import com.os.model.Product;
 
 
@@ -29,21 +31,53 @@ public class CartController {
 	@Autowired
 	CartDao cdao;
 
+	@Autowired
+	HomeDao hdao;
+
 	@RequestMapping(value = "/addCartData/{pid}", method=RequestMethod.GET)
 	public ModelAndView addcart(@PathVariable long pid,HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session=request.getSession();
 		CartProducts cp = new CartProducts();
-		cp.setGp_id(pid);
-		int quant = cdao.getProductQuantity(pid);
-		cp.setGc_quantity(quant);
 		long user_id = (Long)session.getAttribute("user_id");
+		cp.setGp_id(pid);
+		int quant = cdao.getProductQuantity(pid, user_id);
+		cp.setGc_quantity(quant);
+		
 		cp.setGu_id(user_id);
 		int i = cdao.saveCart(cp);
 		List<CartProducts> list = new LinkedList<CartProducts>();
+		List<Category> clist = new LinkedList<Category>();
+		clist = hdao.getAllCategory();
 		list = cdao.getCartData(user_id);
-		ModelAndView map = new ModelAndView("cart");
-		map.addObject("cartdata",list);
-		return map;	
+		ModelAndView map = new ModelAndView();
+		if(list.isEmpty()) {
+			map.setViewName("emptyCart");
+		}
+		else {
+			map.setViewName("cart");
+			map.addObject("Category",clist);
+			map.addObject("cartdata",list);
+		}
+		return map;
+	}
 
+	@RequestMapping(value = "/myCart/9", method=RequestMethod.GET)
+	public ModelAndView displayCart(@PathVariable int id,HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session=request.getSession();
+		long user_id = (Long)session.getAttribute("user_id");
+		List<CartProducts> list = new LinkedList<CartProducts>();
+		List<Category> clist = new LinkedList<Category>();
+		clist = hdao.getAllCategory();
+		list = cdao.getCartData(user_id);
+		ModelAndView map = new ModelAndView();
+		if(list.isEmpty()) {
+			map.setViewName("emptyCart");
+		}
+		else {
+			map.setViewName("cart");
+			map.addObject("Category",clist);
+			map.addObject("cartdata",list);
+		}
+		return map;
 	}
 }

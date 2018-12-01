@@ -28,8 +28,12 @@ public class CartDao {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-	public int getProductQuantity(long pid) {
-		return 1;
+	public int getProductQuantity(long pid, long uid) {
+		
+		String q = "select count(*) AS count_prod from g11_cartproducts where gu_id = ? and gp_id = ?";
+		int count = jdbcTemplate.queryForObject(q, new Object[] {uid, pid}, Integer.class);
+		count+=1;
+		return count;
 	}
 	public int saveCart(CartProducts cp)	{
 		String query="insert into g11_cartproducts values(g11_cartproducts_seq.nextval,'"+cp.getGp_id()+"','"+cp.getGu_id()+"','"+cp.getGc_quantity()+"')";
