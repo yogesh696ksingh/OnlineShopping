@@ -33,6 +33,13 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	crossorigin="anonymous"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		document.onkeydown = function(e) {
+			return (e.which || e.keyCode) != 116;
+		};
+	}
+</script>
 </head>
 <body>
 
@@ -83,18 +90,21 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="../redirectLogout">Logout</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link active" href=".../myCart/9">Cart</a>
-			</li>
+			<li class="nav-item"><a class="nav-link active"
+				href="../myCart/9">Cart</a></li>
 		</ul>
 	</div>
 	</nav>
-<table class="table table-hover">
+	<table class="table table-hover">
 		<thead>
 			<tr>
 				<th scope="col"></th>
 				<th scope="col">Product</th>
 				<th scope="col">Price</th>
 				<th scope="col" colspan="3">Quantity</th>
+				<th scope="col">Price</th>
+				<th scope="col"></th>
+
 			</tr>
 		</thead>
 		<tbody>
@@ -104,12 +114,19 @@
 						src="https://via.placeholder.com/50"></th>
 					<td>${cartprod.gp_name }</td>
 					<td>${cartprod.gp_price }</td>
-					<td><i class="fas fa-cart-plus"></i></td>
+					<td><a href="../add/${cartprod.gp_id }">+</a></td>
 					<td>${cartprod.gc_quantity }</td>
-					<td><i class="fas fa-cart-minus"></i></td>
-				</tr> 
+					<td><a href="../deduce/${cartprod.gp_id }">-</a></td>
+					<td>${cartprod.gp_price }</td>
+					<td><a href="../remove/${cartprod.gp_id }">X</a></td>
+				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<div class="col-sm-6 offset-sm-3">
+		<a type="button" class="btn btn-success btn-block" href="../billing">Proceed to
+			Checkout:&nbsp; &#8377;${total_price }</a>
+	</div>
+
 </body>
 </html>
