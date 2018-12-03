@@ -47,7 +47,7 @@ public class CartDao {
 		return init_price;
 	}
 	public int saveCart(CartProducts cp)	{
-		String query="insert into g11_cartproducts values(g11_cartproducts_seq.nextval,'"+cp.getGp_id()+"','"+cp.getGu_id()+"','"+cp.getGc_quantity()+"','"+cp.getGp_price()+"')";
+		String query="insert into g11_cartproducts values(g11_cartproducts_seq.nextval,'"+cp.getGp_id()+"','"+cp.getGu_id()+"','"+cp.getGc_quantity()+"','"+cp.getGp_price()+"','"+cp.getGp_price()+"')";
 		return jdbcTemplate.update(query);
 	}
 	public int updateCart(CartProducts cp, int quant) {
@@ -67,7 +67,8 @@ public class CartDao {
 					cp.setGc_quantity(rs.getLong(4)); 
 					cp.setGp_name(rs.getString(5));
 					double price = rs.getLong(4) * rs.getDouble(6);
-					cp.setGp_price(price);
+					cp.setGp_price(rs.getDouble(6));
+					cp.setWhole_price(price);
 					list.add(cp);
 				}  
 				return list;  
@@ -76,7 +77,7 @@ public class CartDao {
 	}
 
 	public double getTotalPrice(long uid) {
-		String total_q = "select SUM(gc_price) AS total from g11_cartproducts where gu_id = ?";
+		String total_q = "select SUM(gc_whole_price) AS total from g11_cartproducts where gu_id = ?";
 		Double total= jdbcTemplate.queryForObject(total_q, new Object[] {uid}, Double.class);
 		return total;
 	}
@@ -111,6 +112,16 @@ public class CartDao {
 	}
 	public int removeCartData(int pid, long user_id) {
 		String q = "delete from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
+		String priceq = "select gc_price from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
+		double init_price = jdbcTemplate.queryForObject(priceq, Double.class);
+		
+		String quantq = "select gc_quantity from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
+		int quant = jdbcTemplate.queryForObject(quantq, Integer.class);
+		if(quant == 0) {
+			String rem = "delete from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
+			jdbcTemplate.update(rem);
+			return 0;
+		}
 		return jdbcTemplate.update(q);
 	}
 	
@@ -126,7 +137,7 @@ public class CartDao {
 		
 		double finalprice = quant * init_price;
 		
-		String finalq = "update g11_cartproducts set gc_price = "+finalprice+" where gu_id = "+user_id+" and gp_id = "+pid;
+		String finalq = "update g11_cartproducts set gc_whole_price = "+finalprice+" where gu_id = "+user_id+" and gp_id = "+pid;
 		return jdbcTemplate.update(finalq);
 	}
 	public int deduceCartData(int pid, long user_id) {
@@ -137,11 +148,17 @@ public class CartDao {
 		double init_price = jdbcTemplate.queryForObject(priceq, Double.class);
 		
 		String quantq = "select gc_quantity from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
-		double quant = jdbcTemplate.queryForObject(quantq, Integer.class);
-		
+		int quant = jdbcTemplate.queryForObject(quantq, Integer.class);
+		if(quant == 0) {
+			String rem = "delete from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
+			jdbcTemplate.update(rem);
+			return 0;
+		}
 		double finalprice = quant * init_price;
 		
-		String finalq = "update g11_cartproducts set gc_price = "+finalprice+" where gu_id = "+user_id+" and gp_id = "+pid;
-		return jdbcTemplate.update(finalq);
+		String finalq = "update g11_cartproducts set gc_whole_price = "+finalprice+" where gu_id = "+user_id+" and gp_id = "+pid;
+		jdbcTemplate.update(finalq);
+		
+		return quant;
 	}
 }

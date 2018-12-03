@@ -9,6 +9,7 @@ public class CartProducts {
 	private long gc_quantity;
 	private String gp_name;
 	private double gp_price;
+	private double whole_price;
 	
 	public long getPk_g11_cartproducts() {
 		return pk_g11_cartproducts;
@@ -53,6 +54,11 @@ public class CartProducts {
 		this.gp_price = gp_price;
 	}
 
-	
+	public double getWhole_price() {
+		return whole_price;
+	}
 
+	public void setWhole_price(double whole_price) {
+		this.whole_price = whole_price;
+	}
 }

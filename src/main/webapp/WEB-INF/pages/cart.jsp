@@ -117,7 +117,7 @@
 					<td><a href="../add/${cartprod.gp_id }">+</a></td>
 					<td>${cartprod.gc_quantity }</td>
 					<td><a href="../deduce/${cartprod.gp_id }">-</a></td>
-					<td>${cartprod.gp_price }</td>
+					<td>${cartprod.whole_price }</td>
 					<td><a href="../remove/${cartprod.gp_id }">X</a></td>
 				</tr>
 			</c:forEach>

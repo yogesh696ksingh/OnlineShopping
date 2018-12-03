@@ -80,12 +80,12 @@ public class CartController {
 		List<Category> clist = new LinkedList<Category>();
 		clist = hdao.getAllCategory();
 		list = cdao.getCartData(user_id);
-		double total_price = cdao.getTotalPrice(user_id);
 		ModelAndView map = new ModelAndView();
 		if(list.isEmpty()) {
 			map.setViewName("emptyCart");
 		}
 		else {
+			double total_price = cdao.getTotalPrice(user_id);
 			map.setViewName("cart");
 			map.addObject("Category",clist);
 			map.addObject("cartdata",list);
@@ -120,6 +120,9 @@ public class CartController {
 		List<Category> clist = new LinkedList<Category>();
 		clist = hdao.getAllCategory();
 		list = cdao.getCartData(user_id);
+		if(list.isEmpty()) {
+			return new ModelAndView("emptyCart");
+		}
 		double total_price = cdao.getTotalPrice(user_id);
 		ModelAndView map = new ModelAndView();
 		if(list.isEmpty()) {
@@ -161,18 +164,21 @@ public class CartController {
 	public ModelAndView deduceCart(@PathVariable int id, HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		long user_id = (Long)session.getAttribute("user_id");
-		int i = cdao.deduceCartData(id, user_id);
+		int quantity = cdao.deduceCartData(id, user_id);
+//		if(quantity == 0) {
+//			return new ModelAndView("emptyCart");
+//		}
 		List<CartProducts> list = new LinkedList<CartProducts>();
 		List<Category> clist = new LinkedList<Category>();
 		clist = hdao.getAllCategory();
 		list = cdao.getCartData(user_id);
-		double total_price = cdao.getTotalPrice(user_id);
-		System.out.println(total_price);
 		ModelAndView map = new ModelAndView();
 		if(list.isEmpty()) {
 			map.setViewName("emptyCart");
 		}
 		else {
+			double total_price = cdao.getTotalPrice(user_id);
+			System.out.println(total_price);
 			map.setViewName("cart");
 			map.addObject("Category",clist);
 			map.addObject("cartdata",list);
