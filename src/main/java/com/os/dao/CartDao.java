@@ -116,22 +116,32 @@ public class CartDao {
 	
 	public int addCartData(int pid, long user_id) {
 		String q = "update g11_cartproducts set gc_quantity = (gc_quantity+1) where gu_id = "+user_id+" and gp_id = "+pid;
+		jdbcTemplate.update(q);
+		
 		String priceq = "select gc_price from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
 		double init_price = jdbcTemplate.queryForObject(priceq, Double.class);
+		
 		String quantq = "select gc_quantity from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
 		double quant = jdbcTemplate.queryForObject(quantq, Integer.class);
+		
 		double finalprice = quant * init_price;
+		
 		String finalq = "update g11_cartproducts set gc_price = "+finalprice+" where gu_id = "+user_id+" and gp_id = "+pid;
-		return jdbcTemplate.update(q);
+		return jdbcTemplate.update(finalq);
 	}
 	public int deduceCartData(int pid, long user_id) {
 		String q = "update g11_cartproducts set gc_quantity = (gc_quantity-1) where gu_id = "+user_id+" and gp_id = "+pid;
+		jdbcTemplate.update(q);
+		
 		String priceq = "select gc_price from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
 		double init_price = jdbcTemplate.queryForObject(priceq, Double.class);
+		
 		String quantq = "select gc_quantity from g11_cartproducts where gu_id = "+user_id+" and gp_id = "+pid;
 		double quant = jdbcTemplate.queryForObject(quantq, Integer.class);
+		
 		double finalprice = quant * init_price;
+		
 		String finalq = "update g11_cartproducts set gc_price = "+finalprice+" where gu_id = "+user_id+" and gp_id = "+pid;
-		return jdbcTemplate.update(q);
+		return jdbcTemplate.update(finalq);
 	}
 }

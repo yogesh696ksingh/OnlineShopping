@@ -167,6 +167,7 @@ public class CartController {
 		clist = hdao.getAllCategory();
 		list = cdao.getCartData(user_id);
 		double total_price = cdao.getTotalPrice(user_id);
+		System.out.println(total_price);
 		ModelAndView map = new ModelAndView();
 		if(list.isEmpty()) {
 			map.setViewName("emptyCart");

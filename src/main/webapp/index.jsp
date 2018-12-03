@@ -112,15 +112,13 @@
 					type="tel" minlength="10" maxlength="10" required>
 				</div>
 				<div class="form-group col-md-6">
-					<label for="gu_usertype" class="control-label">Select
-					User</label>
-					<select class="form-control" id="gu_usertype" name="gu_usertype">
+				</div>
+					<input type="hidden" id="gu_usertype" name="gu_usertype"> 
+					<!-- <select class="form-control" id="gu_usertype" name="gu_usertype">
 						<option>Choose...</option>
 						<option value="customer">Customer</option>
-						<option value="retailer">Retailer</option>
 						<option value="admin">Admin</option>
-					</select>
-				</div>
+					</select> -->
 			</div>
 
 			<div class="form-row">
