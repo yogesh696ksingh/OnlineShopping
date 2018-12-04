@@ -178,7 +178,6 @@ public class CartController {
 		}
 		else {
 			double total_price = cdao.getTotalPrice(user_id);
-			System.out.println(total_price);
 			map.setViewName("cart");
 			map.addObject("Category",clist);
 			map.addObject("cartdata",list);

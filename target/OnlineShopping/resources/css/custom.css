@@ -1,8 +1,16 @@
 @charset "ISO-8859-1";
+
 .product_card {
 	margin: 2vw;
 }
 
 nav {
-	margin-bottom: 5%;
+	margin: 5%;	
+}
+
+a {
+	background-color: #23476d !important;
+}
+button {
+	background-color: #23476d !important;
 }

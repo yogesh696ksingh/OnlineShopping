@@ -55,7 +55,7 @@
 				<div class="form-group col-md-6">
 					<label for="gu_name">Name</label>
 					<input name="gu_name"
-					placeholder="Name" class="form-control" type="text" required>
+					placeholder="Name" pattern="[a-z]+$" minlength="2" maxlength="20" class="form-control" type="text" required>
 				</div>
 
 				<!-- Email -->

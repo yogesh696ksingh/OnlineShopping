@@ -103,8 +103,8 @@
 
 	<div class="card-deck">
 		<div class="card" align="center">
-			<img class="card-img" src="https://via.placeholder.com/150"
-				alt="Card image cap" style="width: 50% !important">
+			<img class="card-img" src="<c:url value="${pi.gp_image }"/>"
+				alt="Card image cap" style="width: 200px;height:200px; !important"/>
 			<div class="card-footer" align="center">
 				<small class="text">Price: &#x20B9 ${pi.gp_price }</small>
 			</div>

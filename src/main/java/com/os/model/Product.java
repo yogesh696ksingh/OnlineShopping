@@ -5,12 +5,12 @@ import java.sql.Date;
 public class Product {
 	private long pk_g11_products;
 	private long gp_cid;
-	private long gp_scid;
 	private String gp_name;
 	private String gp_image;
 	private long gp_stock;
 	private double gp_price;
 	private String gp_description;
+	private long gp_scid;
 	private Date gp_date;
 	public long getPk_g11_products() {
 		return pk_g11_products;
@@ -23,12 +23,6 @@ public class Product {
 	}
 	public void setGp_cid(long gp_cid) {
 		this.gp_cid = gp_cid;
-	}
-	public long getGp_scid() {
-		return gp_scid;
-	}
-	public void setGp_scid(long gp_scid) {
-		this.gp_scid = gp_scid;
 	}
 	public String getGp_name() {
 		return gp_name;
@@ -61,16 +55,21 @@ public class Product {
 	public void setGp_description(String gp_description) {
 		this.gp_description = gp_description;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "id:'"+getPk_g11_products()+"'name:'"+getGp_name()+"'price:'"+getGp_price()+"'";
+	}
+	public long getGp_scid() {
+		return gp_scid;
+	}
+	public void setGp_scid(long gp_scid) {
+		this.gp_scid = gp_scid;
+	}
 	public Date getGp_date() {
 		return gp_date;
 	}
 	public void setGp_date(Date gp_date) {
 		this.gp_date = gp_date;
 	}
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return "id:'"+getPk_g11_products()+"'name:'"+getGp_name()+"'price:'"+getGp_price()+"'";
-	}
-	
 }

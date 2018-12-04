@@ -40,44 +40,11 @@
 			}
 			return true;
 		}
-
-		/* var name = document.getElementById("gu_name").value;
-		var email = document.getElementById("gu_email").value;
-		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-		var mobile = document.getElementById("gu_mobile").value;
-		var mob = /^[1-9]{1}[0-9]{9}$/;
-  		var atposition=email.indexOf("@");  
-		var dotposition=email.lastIndexOf(".");  
-		if (name==null || name==""){  
-			  alert("Name can't be blank");  
-			  return false;  
-			}
-		else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
-		  alert("Please enter a valid e-mail address ");  
-		  return false;  
-		  }  
-		else if (mobile == "" || mobile == null) {
-		    alert("Please enter your Mobile No.");
-		    return false;
-		  }
-		else if (mobile.length < 10 || mobile.length > 10) {
-		    alert("Mobile No. is not valid, Please Enter 10 Digit Mobile No.");
-		    return false;
-		  }		
-		else if (mob.test(mobile) == false) {
-		    alert("Please enter valid mobile number.");
-		    return false;
-		}
-		else if(password.length<8){  
-		  alert("Password must be at least 8 characters long.");  
-			  return false;  
-			}   */
-
 		</script>
 	</head>
 	<body>
 		<nav class="navbar navbar-dark bg-primary" style="background-color: #23476d !important;">
-			<a class="navbar-brand" href="#">Shopp-E</a>
+			<a class="navbar-brand" href="admin">Shopp-E</a>
 		</nav>
 		<div class="col-sm-8 offset-sm-2" style="margin-top: 5%;">
 			<form action="saveUser" method="post"
@@ -112,15 +79,13 @@
 					type="tel" minlength="10" maxlength="10" required>
 				</div>
 				<div class="form-group col-md-6">
-					<label for="gu_usertype" class="control-label">Select
-					User</label>
-					<select class="form-control" id="gu_usertype" name="gu_usertype">
+				</div>
+					<input type="hidden" id="gu_usertype" name="gu_usertype"> 
+					<!-- <select class="form-control" id="gu_usertype" name="gu_usertype">
 						<option>Choose...</option>
 						<option value="customer">Customer</option>
-						<option value="retailer">Retailer</option>
 						<option value="admin">Admin</option>
-					</select>
-				</div>
+					</select> -->
 			</div>
 
 			<div class="form-row">

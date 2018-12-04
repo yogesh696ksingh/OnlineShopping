@@ -59,8 +59,7 @@ public class UserController {
 					ModelAndView map = new ModelAndView("display");
 					map.addObject("Category",clist);
 					map.addObject("Product", plist);
-					return (map);
-
+					return(map);
 				}
 			}
 		}
@@ -89,8 +88,7 @@ public class UserController {
 		HttpSession session=request.getSession();
 		session.removeAttribute("user_name");
 		session.removeAttribute("user_id");
-		session.invalidate();
-		
+		session.invalidate();		
 		return new ModelAndView("logout");
 	}
 	

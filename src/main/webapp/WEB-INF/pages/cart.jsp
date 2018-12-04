@@ -110,8 +110,6 @@
 		<tbody>
 			<c:forEach var="cartprod" items="${cartdata }" varStatus="status">
 				<tr>
-					<th scope="row"><img alt=""
-						src="https://via.placeholder.com/50"></th>
 					<td>${cartprod.gp_name }</td>
 					<td>${cartprod.gp_price }</td>
 					<td><a href="../add/${cartprod.gp_id }">+</a></td>
@@ -124,8 +122,8 @@
 		</tbody>
 	</table>
 	<div class="col-sm-6 offset-sm-3">
-		<a type="button" class="btn btn-success btn-block" href="../billing">Proceed to
-			Checkout:&nbsp; &#8377;${total_price }</a>
+		<a type="button" class="btn btn-success btn-block" href="../billing">Proceed
+			to Checkout:&nbsp; &#8377;${total_price }</a>
 	</div>
 
 </body>

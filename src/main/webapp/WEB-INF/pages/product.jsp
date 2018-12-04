@@ -101,8 +101,8 @@
 			<c:forEach var="cprod" items="${Category_Product }"
 				varStatus="status">
 				<div class="card col-sm-3 product_card">
-					<img class="card-img-top" src="https://via.placeholder.com/250"
-						alt="Card image cap" style="margin-top:15px">
+					<img class="card-img-top" src="<c:url value="${cprod.gp_image }" />"
+						alt="Card image cap" style="margin-top:15px;width: 200px;height:200px; !important""/>
 					<div class="card-body">
 						<h5 class="card-title"><a href="../productdata/${cprod.pk_g11_products }/${cprod.gp_cid }">
 							<c:out value="${cprod.gp_name }" />

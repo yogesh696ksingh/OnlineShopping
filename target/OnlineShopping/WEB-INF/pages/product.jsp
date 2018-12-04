@@ -44,7 +44,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="redirectDisplay">Shopp-E</a>
+		class="navbar-brand" href="../redirectDisplay">Shopp-E</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -54,7 +54,7 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="redirectDisplay">Home
+			<li class="nav-item active"><a class="nav-link" href="../redirectDisplay">Home
 					<span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
@@ -64,11 +64,11 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<c:forEach var="cat" items="${Category }" varStatus="status">
 						<a class="dropdown-item"
-							href="getCategory/${cat.pk_g11_categories }"><c:out
+							href="../getCategory/${cat.pk_g11_categories }"><c:out
 								value="${cat.gc_name }" /></a>
 					</c:forEach>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="getCategory/9">All Products</a>
+					<a class="dropdown-item" href="../getCategory/9">All Products</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
 		</ul>
@@ -88,9 +88,9 @@
 					<a class="dropdown-item" href="#">My Orders</a> <a
 						class="dropdown-item" href="#">My Profile</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="redirectLogout">Logout</a>
+					<a class="dropdown-item" href="../redirectLogout">Logout</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link active" href="#">Cart</a>
+			<li class="nav-item"><a class="nav-link active" href="../myCart/9">Cart</a>
 			</li>
 		</ul>
 	</div>
@@ -101,11 +101,12 @@
 			<c:forEach var="cprod" items="${Category_Product }"
 				varStatus="status">
 				<div class="card col-sm-3 product_card">
-					<img class="card-img-top" src="https://via.placeholder.com/150"
+					<img class="card-img-top" src="https://via.placeholder.com/250"
 						alt="Card image cap" style="margin-top:15px">
 					<div class="card-body">
-						<h5 class="card-title">
+						<h5 class="card-title"><a href="../productdata/${cprod.pk_g11_products }/${cprod.gp_cid }">
 							<c:out value="${cprod.gp_name }" />
+							</a>
 						</h5>
 						<p class="card-text">
 							Price:&nbsp; &#8377;
@@ -113,7 +114,7 @@
 						</p>
 					</div>
 					<div class="card-body">
-						<a href="#" class="card-link">Cart</a> <a href="#"
+						<a href="../addCartData/${cprod.pk_g11_products }" class="card-link">Cart</a> <a href="#"
 							class="card-link">Compare</a>
 					</div>
 				</div>

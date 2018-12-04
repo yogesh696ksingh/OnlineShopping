@@ -14,7 +14,7 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/custom.css"/>"/>
+	href="<c:url value="/resources/css/custom.css"/>" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -29,20 +29,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	crossorigin="anonymous"></script>
-<script type="text/javascript">
-	/* 		$(document).ready(function() {
-	 resize_to_fit();
-	 });
 
-	 function resize_to_fit() {
-	 var fontsize = $('.dyanamic_font').css('font-size');
-	 $('.dyanamic_font').css('fontSize', parseFloat(fontsize));
-
-	 if ($('.dyanamic_font').height() >= $('.dyanamic_font div').height()) {
-	 resize_to_fit();
-	 }
-	 } */
-</script>
 </head>
 <body>
 
@@ -94,7 +81,7 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="redirectLogout">Logout</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link active" href="myCart">Cart</a>
+			<li class="nav-item"><a class="nav-link active" href="myCart/9">Cart</a>
 			</li>
 		</ul>
 	</div>
@@ -108,7 +95,10 @@
 							<img class="card-img-top" src="https://via.placeholder.com/150"
 								alt="Card image cap">
 							<p class="card-title">
-								<strong><c:out value="${prod.gp_name }" /></strong>
+								<strong><a
+									href="productdata/${prod.pk_g11_products }/${prod.gp_cid }">
+										<c:out value="${prod.gp_name }" />
+								</a></strong>
 							</p>
 							<p class="card-text">
 								Price:&nbsp; &#8377;
@@ -116,8 +106,8 @@
 							</p>
 							<hr>
 							<div class="card-body">
-								<a href="addCartData/${prod.pk_g11_products }" class="card-link">Cart</a> <a href="#"
-									class="card-link">Compare</a>
+								<a href="addCartData/${prod.pk_g11_products }" class="card-link">Cart</a>
+								<a href="#" class="card-link">Compare</a>
 							</div>
 						</div>
 					</div>

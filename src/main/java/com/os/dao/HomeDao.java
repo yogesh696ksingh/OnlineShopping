@@ -41,20 +41,18 @@ public class HomeDao {
 		});  
 	}
 	public List<Product> getLatestProducts(){  
-		return jdbcTemplate.query("select * from (select * from g11_products order by gp_date) where rownum < 5",new ResultSetExtractor<List<Product>>(){  
+		return jdbcTemplate.query("select * from g11_products where rownum < 5 order by gp_price ",new ResultSetExtractor<List<Product>>(){  
 			public List<Product> extractData(ResultSet rs) throws SQLException, DataAccessException {    
 				List<Product> list=new ArrayList<Product>();  
 				while(rs.next()){  
 					Product p=new Product();
 					p.setPk_g11_products(rs.getLong(1));
-					p.setGp_cid(rs.getLong(2));
-					p.setGp_scid(rs.getLong(3));
-					p.setGp_name(rs.getString(4));
-					p.setGp_image(rs.getString(5));
-					p.setGp_stock(rs.getLong(6));
-					p.setGp_price(rs.getDouble(7));
-					p.setGp_description(rs.getString(8));
-					p.setGp_date(rs.getDate(9));
+					p.setGp_cid(rs.getLong(2));					
+					p.setGp_name(rs.getString(3));
+					p.setGp_image(rs.getString(4));
+					p.setGp_stock(rs.getLong(5));
+					p.setGp_price(rs.getDouble(6));
+					p.setGp_description(rs.getString(7));
 					list.add(p);  
 				}  
 				return list;  
@@ -71,15 +69,13 @@ public class HomeDao {
 					while(rs.next()){  
 						Product p=new Product();
 						p.setPk_g11_products(rs.getLong(1));
-						p.setGp_cid(rs.getLong(2));
-						p.setGp_scid(rs.getLong(3));
-						p.setGp_name(rs.getString(4));
-						p.setGp_image(rs.getString(5));
-						p.setGp_stock(rs.getLong(6));
-						p.setGp_price(rs.getDouble(7));
-						p.setGp_description(rs.getString(8));
-						p.setGp_date(rs.getDate(9));
-						list.add(p);  
+						p.setGp_cid(rs.getLong(2));					
+						p.setGp_name(rs.getString(3));
+						p.setGp_image(rs.getString(4));
+						p.setGp_stock(rs.getLong(5));
+						p.setGp_price(rs.getDouble(6));
+						p.setGp_description(rs.getString(7));
+						list.add(p);   
 					}  
 					return list;  
 				}  
@@ -93,15 +89,13 @@ public class HomeDao {
 					while(rs.next()){  
 						Product p=new Product();
 						p.setPk_g11_products(rs.getLong(1));
-						p.setGp_cid(rs.getLong(2));
-						p.setGp_scid(rs.getLong(3));
-						p.setGp_name(rs.getString(4));
-						p.setGp_image(rs.getString(5));
-						p.setGp_stock(rs.getLong(6));
-						p.setGp_price(rs.getDouble(7));
-						p.setGp_description(rs.getString(8));
-						p.setGp_date(rs.getDate(9));
-						list.add(p);  
+						p.setGp_cid(rs.getLong(2));					
+						p.setGp_name(rs.getString(3));
+						p.setGp_image(rs.getString(4));
+						p.setGp_stock(rs.getLong(5));
+						p.setGp_price(rs.getDouble(6));
+						p.setGp_description(rs.getString(7));
+						list.add(p);    
 					}  
 					return list;  
 				}  
@@ -117,15 +111,13 @@ public class HomeDao {
 				while(rs.next()){  
 					Product p=new Product();
 					p.setPk_g11_products(rs.getLong(1));
-					p.setGp_cid(rs.getLong(2));
-					p.setGp_scid(rs.getLong(3));
-					p.setGp_name(rs.getString(4));
-					p.setGp_image(rs.getString(5));
-					p.setGp_stock(rs.getLong(6));
-					p.setGp_price(rs.getDouble(7));
-					p.setGp_description(rs.getString(8));
-					p.setGp_date(rs.getDate(9));
-					list.add(p);  
+					p.setGp_cid(rs.getLong(2));					
+					p.setGp_name(rs.getString(3));
+					p.setGp_image(rs.getString(4));
+					p.setGp_stock(rs.getLong(5));
+					p.setGp_price(rs.getDouble(6));
+					p.setGp_description(rs.getString(7));
+					list.add(p);    
 				}  
 				return list;  
 			}  
