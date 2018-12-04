@@ -24,7 +24,8 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/custom.css"/>"/>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/resources/css/custom.css"/>" />
 </head>
 <script type="text/javascript">
 	history.pushState(null, null, location.href);
@@ -35,10 +36,11 @@
 <body>
 	<nav class="navbar navbar-dark bg-primary"
 		style="background-color: #23476d !important;"> <a
-		class="navbar-brand" href="#">Shopp-E</a> </nav>
+		class="navbar-brand" href="admin">Shopp-E</a> </nav>
 
-	<div class="row" style="margin-top: 10%;">
-		<div class="container col-sm-4 offset-sm-4">
+	<div class="row">
+		<div class="container col-sm-4 offset-sm-4 jumbotron">
+			<h1 class="display-4 text-center">Login</h1>
 			<form action="userLogin" method="post">
 				<!-- Email -->
 				<div class="form-group">

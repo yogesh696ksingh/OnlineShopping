@@ -36,7 +36,11 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
-		<bean id="cdao" class="com.os.dao.CartDao">
+	<bean id="cdao" class="com.os.dao.CartDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate">
+		</property>
+	</bean>
+	<bean id="adao" class="com.os.dao.AdminDao">
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>

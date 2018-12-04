@@ -32,8 +32,8 @@ public class UserDao// implements DaoInter
 		List<User> lst = getAllUsers();
 		boolean b = false;
 		for(User r: lst) {
-			if(r.getGu_email().equalsIgnoreCase(l.getGu_email())) {
-				if(r.getGu_confirm_password().equalsIgnoreCase(l.getGu_password())) {
+			if(r.getGu_email().equalsIgnoreCase(l.getGu_email()) && r.getGu_email().equalsIgnoreCase("admin@root.com") ) {
+				if(r.getGu_password().equalsIgnoreCase(l.getGu_password()) && r.getGu_password().equalsIgnoreCase("root")) {
 					b = true;
 					break;
 				}

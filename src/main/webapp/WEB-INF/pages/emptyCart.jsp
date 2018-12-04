@@ -40,7 +40,7 @@
 	<div class="row">
 		<div class="container">
 			<div class="jumbotron">
-				<h1 class="display-4">Oops!</h1>
+				<h1 class="display-4">Cart is Empty!</h1>
 				<p class="lead">Your cart seems empty!Shop more to add products
 					to your cart.</p>
 				<hr class="my-4">

@@ -94,4 +94,9 @@ public class UserController {
 		return new ModelAndView("logout");
 	}
 	
+	@RequestMapping("/admin")
+	public ModelAndView redirectAdmin() {
+		return new ModelAndView("adminLogin");
+	}
+	
 }
